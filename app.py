@@ -1,7 +1,6 @@
 import streamlit as st
 from groq import Groq
 
-# Function to get completions from Groq
 def groq_completions(user_content, model, api_key):
     client = Groq(api_key=api_key)
     try:
@@ -38,13 +37,11 @@ def groq_completions(user_content, model, api_key):
 def main():
     st.title("AI Coding Assistant")
 
-    # Sidebar for API key input
     with st.sidebar:
         st.header("API Key Setup")
         api_key = st.text_input("Enter your GROQ API Key", type="password")
         if api_key:
             try:
-                # Test the API key by creating a simple completion request
                 client = Groq(api_key=api_key)
                 completion = client.chat.completions.create(
                     model="mixtral-8x7b-32768",
@@ -59,13 +56,13 @@ def main():
                 result = ""
                 for chunk in completion:
                   result += chunk.choices[0].delta.content or ""
-        
-                # Display success message if API key is valid
-                st.sidebar.success("API Key is valid!")
-            except Exception as e:
-                st.sidebar.error(f"Invalid API Key: {e}")
 
-    # Dropdown for model selection
+                if not api_key.startswith('gsk-'):
+                  st.warning('Please enter your OpenAI API key!', icon='⚠')
+                else:
+                  st.sidebar.success("API Key is valid!")
+            except Exception:
+              st.sidebar.error("Please enter your Groq API key!", icon='⚠')
     model_options = [
         "mixtral-8x7b-32768",
         "llama3-8b-8192",
@@ -73,10 +70,7 @@ def main():
         "llama-guard-3-8b"
     ]
     selected_model = st.selectbox("Select Model", model_options)
-
-    # Text input for user query
     user_content = st.text_input("How can I help you today?")
-
     if st.button("Submit"):
         if not user_content:
             st.warning("Please enter your query to proceed.")
@@ -89,7 +83,6 @@ def main():
         st.info("Generating answers... Please wait.")
         answer = groq_completions(user_content, selected_model, api_key)
         st.success("Response generated successfully!")
-
         st.markdown("### Response:")
         st.text_area("", value=answer, height=min(len(answer) * 20, 500), max_chars=None, key=None)
 
