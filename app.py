@@ -71,7 +71,8 @@ def main():
         "mixtral-8x7b-32768",
         "llama3-8b-8192",
         "llama3-70b-8192",
-        "llama-guard-3-8b"
+        "gemma2-9b-it",
+        "gemma-7b-it",
     ]
     selected_model = st.selectbox("Select Model", model_options)
     user_content = st.text_input("How can I help you today?")
