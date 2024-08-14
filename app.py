@@ -35,8 +35,8 @@ def groq_completions(user_content, model, api_key):
 
 # Streamlit interface
 def main():
+    st.set_page_config(page_title="AI Assistant", page_icon="logo.png")
     st.title("AI Coding Assistant")
-
     with st.sidebar:
         st.header("API Key Setup")
         api_key = st.text_input("Enter your GROQ API Key", type="password")
