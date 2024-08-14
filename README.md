@@ -53,6 +53,6 @@ To clone the repository and run the Python file, follow these steps:
 </div>
 
 
-Demo Video: 
+## Demo Video: 
 
 [![Watch the video](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/thumbnail.png)](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/video.mp4)
