@@ -53,39 +53,6 @@ To clone the repository and run the Python file, follow these steps:
 </div>
 
 
+Demo Video: 
 
-## Contribution Guide
-
-We welcome contributions to the AI Coding Assistant! To contribute, follow these steps:
-
-1. **Fork the Repository**: Click the [Fork](https://github.com/yashksaini-coder/AI-Coding-Assistant/fork) button at the top right of the repository page to create a copy of the repository in your GitHub account.
-
-2. **Clone the Forked Repository**: Clone the repository to your local machine:
-
-    ```bash
-    git clone https://github.com/yourusername/ai-coding-assistant.git
-    ```
-
-3. **Create a New Branch**: Create a new branch for your feature or bugfix:
-
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-
-4. **Make Your Changes**: Implement your feature or fix the bug.
-
-
-5. **Commit and Push**: Commit your changes and push them to your forked repository:
-
-    ```bash
-    git add .
-    git commit -m "Added feature: your-feature-name"
-    git push origin feature/your-feature-name
-    ```
-
-6. **Create a Pull Request**: Go to the original repository on GitHub and click on "New Pull Request". Fill in the necessary details and submit the pull request for review.
-
-7. **Respond to Feedback**: Be responsive to any feedback or changes requested by the repository maintainers.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[![Watch the video](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/thumbnail.png)](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/video.mp4)
