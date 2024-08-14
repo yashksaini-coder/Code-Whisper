@@ -41,28 +41,28 @@ def main():
         st.header("API Key Setup")
         api_key = st.text_input("Enter your GROQ API Key", type="password")
         if api_key:
-            try:
-                client = Groq(api_key=api_key)
-                completion = client.chat.completions.create(
-                    model="mixtral-8x7b-32768",
-                    messages=[{"role": "system", "content": "Test"}],
-                    temperature=0.5,
-                    max_tokens=5,
-                    top_p=1,
-                    stream=True,
-                    stop=None,
-                )
-                
-                result = ""
-                for chunk in completion:
-                  result += chunk.choices[0].delta.content or ""
+            client = Groq(api_key=api_key)
+            completion = client.chat.completions.create(
+                model="mixtral-8x7b-32768",
+                messages=[{"role": "system", "content": "Test"}],
+                temperature=0.5,
+                max_tokens=5,
+                top_p=1,
+                stream=True,
+                stop=None,
+            )
+            
+            result = ""
+            for chunk in completion:
+                result += chunk.choices[0].delta.content or ""
 
-                if not api_key.startswith('gsk-'):
-                  st.warning('Please enter your OpenAI API key!', icon='⚠')
-                else:
-                  st.sidebar.success("API Key is valid!")
-            except Exception:
-              st.sidebar.error("Please enter your Groq API key!", icon='⚠')
+            if api_key.startswith('gsk-'):
+                st.warning("Please enter your Groq API key!", icon='⚠')
+            else:
+                st.sidebar.success("API Key is valid!")
+                st.sidebar.info("All good!")
+        else:
+            st.warning("Please enter and validate your API Key in the sidebar.")
     model_options = [
         "mixtral-8x7b-32768",
         "llama3-8b-8192",
@@ -79,11 +79,9 @@ def main():
         if not api_key:
             st.warning("Please enter and validate your API Key in the sidebar.")
             return
-
-        st.info("Generating answers... Please wait.")
+        
         answer = groq_completions(user_content, selected_model, api_key)
         st.success("Response generated successfully!")
-        st.markdown("### Response:")
         st.text_area("", value=answer, height=min(len(answer) * 20, 500), max_chars=None, key=None)
 
 if __name__ == "__main__":
