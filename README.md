@@ -55,4 +55,4 @@ To clone the repository and run the Python file, follow these steps:
 
 ## Demo Video: 
 
-[![Watch the video](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/thumbnail.png)](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/video.mp4)
+[![Watch the video](https://raw.githubusercontent.com/yashksaini-coder/Code-Whisper/master/images/thumbnail.png)](https://www.youtube.com/watch?v=lEKjmKORdtM)
