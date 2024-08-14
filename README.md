@@ -49,7 +49,7 @@ To clone the repository and run the Python file, follow these steps:
 5. **Interact with the AI Coding Assistant:** Once the Python file is running, you can interact with the AI Coding Assistant to get code suggestions, debugging tips, and documentation generation. But first you need to add your Groq API-KEY in the sidebar panel.
 
 <div align="center">
-  <img src="api-key.png" alt="API-KEY" width="300px">
+  <img src="images/api-key.png" alt="API-KEY" width="300px">
 </div>
 
 
