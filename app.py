@@ -61,12 +61,11 @@ def main():
                     st.warning("Please enter your Groq API key!", icon='⚠')
                 else:
                     st.sidebar.success("API Key is valid!")
-                    st.sidebar.info("All good!")
             else:
                 st.warning("Please enter and validate your API Key in the sidebar.")
                 
-        except Exception:
-            st.warning("The API Key is not valid. Please enter a valid API Key.")
+        except Exception as e:
+            st.sidebar.error(f"We ran into an error: {e}")
     model_options = [
         "mixtral-8x7b-32768",
         "llama3-8b-8192",
@@ -86,8 +85,11 @@ def main():
             return
         
         answer = groq_completions(user_content, selected_model, api_key)
-        st.success("Response generated successfully!")
-        st.text_area("", value=answer, height=min(len(answer) * 20, 500), max_chars=None, key=None)
+        if answer:
+            st.success("Response generated successfully!")
+            st.text_area("", value=answer, height=min(len(answer) * 20, 500), max_chars=None, key=None)
+        else:
+            st.error("Failed to generate a response. Please try again.")
 
 if __name__ == "__main__":
     main()
