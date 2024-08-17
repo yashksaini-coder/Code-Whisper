@@ -55,4 +55,8 @@ To clone the repository and run the Python file, follow these steps:
 
 ## Demo Video: 
 
-[![Watch the video](https://youtu.be/lEKjmKORdtM?list=PLi6lphH3yQLrwY_fI4PTVvhr3s5n5W_m-)
+<div align="center">
+    <a href="https://youtu.be/lEKjmKORdtM">
+    <img src="images/thumbnail.png" height="500rem" width="800rem">
+    </a>
+</div>
