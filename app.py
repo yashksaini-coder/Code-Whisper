@@ -1,6 +1,6 @@
 import streamlit as st
 from groq import Groq
-from streamlit_extras.badges import badge
+# from streamlit_extras.badges import badge
 
 def github_badge():
     badge(type="github", name="yashksaini-coder/Code-Whisper")
@@ -74,9 +74,6 @@ def main():
         except Exception:
             st.sidebar.error("Server is unreachable")
              
-    # with st.sidebar:
-    #     github_badge()
-    #     twitter_badge()
     model_options = [
         "mixtral-8x7b-32768",
         "llama3-8b-8192",
